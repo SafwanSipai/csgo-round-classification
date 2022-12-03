@@ -28,7 +28,7 @@ into account.''')
 st.markdown('---')
 
 model = st.radio('Choose the model', horizontal=True,
-options=['Logistic Regression', 'SVM', 'Random Forest Classifier', 'Neural Network'])
+options=['Logistic Regression', 'SVM', 'Naive Bayes Classifier', 'Neural Network'])
 map = st.selectbox('Select a map', maps)
 time_left = st.slider('Time left', 0, 180)
 ct_score = st.slider('CT score', 0, 15)
@@ -217,8 +217,8 @@ if model == 'Logistic Regression':
         model = pickle.load(open('logistic.sav', 'rb'))
 elif model == 'SVM':
     model = pickle.load(open('svm.sav', 'rb'))
-elif model == 'Random Forest Classifier':
-    model = pickle.load(open('randomForest.sav', 'rb'))
+elif model == 'Naive Bayes Classifier':
+    model = pickle.load(open('naivebayes.sav', 'rb'))
 elif model == 'Neural Network':
     model = pickle.load(open('nnet.h5', 'rb'))
 
